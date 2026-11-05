@@ -10,7 +10,7 @@ permissions:
 engine:
   id: copilot
   copilot-sdk: true
-  model: gpt-4.1
+  model: gpt-5.3-codex
 tools:
   edit:
   github:
