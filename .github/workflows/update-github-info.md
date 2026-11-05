@@ -10,6 +10,7 @@ permissions:
 engine:
   id: copilot
   copilot-sdk: true
+  model: claude-sonnet-4.5
 tools:
   edit:
   github:
