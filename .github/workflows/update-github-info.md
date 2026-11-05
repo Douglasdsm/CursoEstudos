@@ -10,7 +10,7 @@ permissions:
 engine:
   id: copilot
   copilot-sdk: true
-  model: claude-sonnet-5
+  model: claude-haiku-4.5
 tools:
   edit:
   github:
