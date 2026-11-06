@@ -122,8 +122,9 @@ jobs:
           grep -Eqi '^[[:space:]]*edit:' "$workflow_file"
           # Copilot CLI does not support tools.web-fetch; a curl-based fetch
           # is valid when the workflow already allowlists the source domains.
-          if grep -Eqi '^[[:space:]]*web-fetch:' "$workflow_file"; then
-            echo "Web fetch tool configured."
+          if grep -Eqi '^[[:space:]]*web-fetch:' "$workflow_file" &&
+             grep -Eqi '^[[:space:]]*copilot-sdk:[[:space:]]*true' "$workflow_file"; then
+            echo "Web fetch tool configured for Copilot SDK mode."
           elif grep -Eqi 'curl.*https://github\.blog/(latest|changelog)' "$workflow_file"; then
             echo "Shell curl fetch configured."
           else
