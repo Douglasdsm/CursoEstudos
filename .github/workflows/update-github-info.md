@@ -9,13 +9,11 @@ permissions:
   pull-requests: read
 engine:
   id: copilot
-  copilot-sdk: true
-  model: gpt-41-copilot
+  model: gpt-4.1
 tools:
   edit:
   github:
     toolsets: [repos]
-  web-fetch:
 network:
   allowed:
     - github.blog
@@ -34,9 +32,9 @@ Keep Mona's GitHub Info website current using official GitHub sources.
 
 1. Read `notes/mona-notes.md` with the GitHub repository tools and follow its editorial guidance.
 2. Read the current `site/content/github-info.md` with the GitHub repository tools before making changes.
-3. Use `web-fetch` to fetch `https://github.blog/latest/`.
-4. Use `web-fetch` to fetch `https://github.blog/changelog/`.
-5. Use `web-fetch` to fetch `https://awesome-copilot.github.com/workflows/`.
+3. Use shell `curl` to fetch `https://github.blog/latest/`.
+4. Use shell `curl` to fetch `https://github.blog/changelog/`.
+5. Use shell `curl` to fetch `https://awesome-copilot.github.com/workflows/`.
 6. Treat `https://awesome-copilot.github.com/workflows/` as an additional source of useful Awesome Copilot workflows alongside the GitHub Blog and Changelog.
 7. Identify the most useful recent blog, changelog, and Awesome Copilot workflow updates for developers. Keep summaries short and practical, and include the source for every update.
 8. Edit `site/content/github-info.md` with the selected, source-linked updates. Preserve useful existing context and avoid duplicating entries.
